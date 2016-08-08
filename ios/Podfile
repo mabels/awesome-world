@@ -1,0 +1,20 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, "8.0"
+
+target 'AwesomeWorld' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for AwesomeWorld
+  pod 'React', :platform => '8.0', :subspecs => ['Core', 'RCTImage', 'RCTNetwork', 'RCTText', 'RCTWebSocket'], :path => '../node_modules/react-native'
+#  pod 'react-native-fbsdkcore', :path => '../node_modules/react-native-fbsdkcore'
+#  pod 'react-native-fbsdklogin', :path => '../node_modules/react-native-fbsdklogin'
+
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
+  target 'AwesomeWorldTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(50, 165, 209, 0.05)',
   },
+  header: {},
   awesomeworld: {
     fontSize: 30,
     textAlign: 'center',
@@ -32,7 +33,26 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#05A5D1',
-  }
+  },
+
+  mapcontainer: {
+  //   position: 'absolute',
+  // top: 0,
+  // left: 0,
+  // right: 0,
+  // bottom: 0,
+  height: 400,
+  width: 400,
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  },
+  map: {
+    position: 'absolute',
+     top: 0,
+     left: 0,
+     right: 0,
+     bottom: 0,
+  },
 });
 
 

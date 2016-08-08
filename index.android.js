@@ -1,4 +1,4 @@
-/**
+ /*
  * Sample React Native App
  * https://github.com/facebook/react-native
  * @flow
@@ -9,15 +9,20 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
 
 import WelcomeScreen from './welcome_screen';
+import Router from './router';
 
 class AwesomeWorld extends Component {
   render() {
     return (
-      <WelcomeScreen />
+      <Navigator
+          initialRoute={{ component: WelcomeScreen, title: 'Awesome Scene', index: 0 }}
+          renderScene={Router}
+        />
     );
   }
 }

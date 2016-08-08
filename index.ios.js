@@ -10,6 +10,7 @@ import {
   StyleSheet,
   NavigatorIOS,
   Text,
+  Navigator,
   View
 } from 'react-native';
 
@@ -17,17 +18,24 @@ import ContainerCSS from './container.css.js';
 
 import WelcomeScreen from './welcome_screen';
 
+import Router from './router';
+
 class AwesomeWorld extends Component {
   render() {
     //this.switchNavBar(true);
+           //
+          //  <NavigatorIOS
+          //   style={{flex: 1}}
+          //   navigationBarHidden={true}
+          //   initialRoute={{
+          //     title: "Awesome",
+          //     component: WelcomeScreen,
+          //   }}
+
     return (
-       <NavigatorIOS
-        style={{flex: 1}}
-        navigationBarHidden={true}
-        initialRoute={{
-          title: "Awesome",
-          component: WelcomeScreen,
-        }}
+      <Navigator
+          initialRoute={{ component: WelcomeScreen, title: 'Awesome Scene', index: 0 }}
+          renderScene={Router}
        />
     );
   }

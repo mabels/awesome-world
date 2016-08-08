@@ -9,7 +9,10 @@ import {
 } from 'react-native';
 
 import ContainerCSS from './container.css';
-import { FBLogin } from 'react-native-facebook-login';
+import Drawer from 'react-native-drawer';
+import ControlPanel from './control_panel';
+
+//import { FBLogin } from 'react-native-facebook-login';
 
 
 class MenuSelector extends React.Component {
@@ -41,25 +44,33 @@ class MenuSelector extends React.Component {
      ).start();
    }
 
+   closeControlPanel = () => {
+     this._drawer.close()
+   };
+   openControlPanel = () => {
+     this._drawer.open()
+   };
+
    render() {
      return (
-      <View>
-        <Animated.View style={[
-          ContainerCSS.menuselector,
-          {
-            height: this.state.menuHeight,
-            transform: [                        // `transform` is an ordered array
-              {scale: this.state.menuTextSize},  // Map `bounceValue` to `scale`
-            ]
-          }
-        ]}>
-            <Text style={ContainerCSS.menuselectortitle}>
-             AweSome
-            </Text>
-            <FBLogin />
-        </Animated.View>
-        {this.props.children}
-      </View>
+       <Drawer ref={(ref) => this._drawer = ref} content={<ControlPanel />} >
+          <View>
+            <Animated.View style={[
+              ContainerCSS.menuselector,
+              {
+                height: this.state.menuHeight,
+                transform: [                        // `transform` is an ordered array
+                  {scale: this.state.menuTextSize},  // Map `bounceValue` to `scale`
+                ]
+              }
+            ]}>
+                <Text style={ContainerCSS.menuselectortitle}>
+                 AweSome
+                </Text>
+            </Animated.View>
+            {this.props.children}
+          </View>
+       </Drawer>
      );
    }
  }
